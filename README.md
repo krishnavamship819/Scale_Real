@@ -16,55 +16,62 @@ You may also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Available Scripts
 
-### `npm run build`
+In the project directory, you can run:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `npm start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Runs the app in the development mode.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The page will reload if you make edits.
+You will also see any lint errors in the console.
 
-### `npm run eject`
+## Docker build image
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `docker build -t krish-vamshi`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Docker run container
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### `docker run -it -p 3000:3000 krish-vamshi`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Docker Volume run container
 
-## Learn More
+### `docker run -it -p 3000:3000 -v PWD:/usr/src/app -v /usr/src/app/node_modules -e CHOKIDAR_USEPOLLING=true kv-react-docker-starter`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Docker compose build image
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `docker-compose build`
 
-### Code Splitting
+## Docker compose run container
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### `docker-compose up`
 
-### Analyzing the Bundle Size
+## Docker compose run container in detached mode
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### `docker-compose up -d`
 
-### Making a Progressive Web App
+## Docker compose check running container status
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### `docker ps`
 
-### Advanced Configuration
+# TO Run The project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## First Build the docker Compose
 
-### Deployment
+### `docker-compose build`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Run the Image
 
-### `npm run build` fails to minify
+### `docker-compose up`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Inorder see the logs
+
+First get the running conyainer ID and use the follwing command
+
+### `docker logs container_ID -f`
+
+### You can access the React-app runing in container through
+
+Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
